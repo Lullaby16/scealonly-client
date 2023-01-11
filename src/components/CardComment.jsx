@@ -25,6 +25,7 @@ const CardComment = ({ comment }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { data: profile } = useGetProfile();
   const { mutate: editComment } = useEditComment();
+  //console.log({ user: profile.id, comment: comment.user_id });
 
   const card = useMemo(
     () => (
@@ -49,11 +50,11 @@ const CardComment = ({ comment }) => {
             <Text color="gray" as="i">
               {moment(comment.created_at).fromNow()}
             </Text>
-            {comment.user_id === profile.user_id ? <Spacer /> : null}
-            {comment.user_id === profile.user_id ? (
+            {comment.user_id === profile?.id ? <Spacer /> : null}
+            {comment.user_id === profile?.id ? (
               <ToggleMenu
-                cid={comment.comment_id}
-                uid={profile.user_id}
+                cid={comment.id}
+                uid={profile.id}
                 stateChanger={setEditing}
               />
             ) : null}
@@ -66,7 +67,7 @@ const CardComment = ({ comment }) => {
                 comment: Yup.string().required("Comment required!"),
               })}
               onSubmit={(values, actions) => {
-                const vals = { ...values, comment_id: comment.comment_id };
+                const vals = { ...values, comment_id: comment.id };
                 actions.resetForm();
                 editComment(vals);
                 setEditing(false);

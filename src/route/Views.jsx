@@ -21,7 +21,7 @@ const Views = () => {
       <Route path="/register" element={<SignUp />} />
       <Route element={<PrivateRoutes />}>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:post_id" element={<Post />} />
+        <Route path="/post/:id" element={<Post />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/donation" element={<Donation />} />
       </Route>

@@ -10,8 +10,9 @@ import CardComment from "./CardComment";
 const CommentSection = ({ post }) => {
   const { mutate: sendComment } = useSendComment();
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useGetComments(post.post_id);
+    useGetComments(post.id);
   const toast = useToast();
+  console.log(data);
   return (
     <Flex
       w="50%"
@@ -31,7 +32,8 @@ const CommentSection = ({ post }) => {
             comment: Yup.string().required("Comment required!"),
           })}
           onSubmit={(values, actions) => {
-            const vals = { ...values, post_id: post.post_id };
+            const vals = { ...values, post_id: post.id };
+            console.log(vals);
             actions.resetForm();
             sendComment(vals);
             toast({

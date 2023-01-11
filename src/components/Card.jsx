@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Card = ({ post }) => {
   const navigate = useNavigate();
   const { mutate: view } = useView();
-  const { data: comment, isLoading } = useGetTotalComments(post.post_id);
+  const { data: comment, isLoading } = useGetTotalComments(post.id);
   const { isOpen, onToggle } = useDisclosure();
 
   const card = useMemo(() => {
@@ -43,14 +43,14 @@ const Card = ({ post }) => {
             cursor="pointer"
           >
             <Link
-              to={`/post/${post.post_id}`}
-              onClick={() => view({ sum: 1, post_id: post.post_id })}
+              to={`/post/${post.id}`}
+              onClick={() => view({ sum: 1, post_id: post.id })}
             >
               <Heading m="1rem">{post.title}</Heading>
               <Text m="1rem">{post.content.slice(0, 800)}</Text>
               <Flex m="1rem" alignItems="center">
                 <Text textColor="GrayText" paddingRight="0.5rem">
-                  #{post.post_id}
+                  #{post.id}
                 </Text>
                 <Text textColor="GrayText" paddingRight="0.5rem">
                   |

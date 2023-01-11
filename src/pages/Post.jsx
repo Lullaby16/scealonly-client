@@ -10,10 +10,10 @@ import CommentSection from "../components/CommentSection";
 import Loading from "../components/Loading";
 
 const Post = () => {
-  const { post_id } = useParams();
-  const { data: post, isLoading: a, error } = useGetPostDetail({ id: post_id });
+  const { id } = useParams();
+  const { data: post, isLoading: a, error } = useGetPostDetail({ id: id });
   const { data: profile } = useGetProfile();
-  const { data: comment, isLoading: b } = useGetTotalComments(post_id);
+  const { data: comment, isLoading: b } = useGetTotalComments(id);
 
   if (a) return <Loading />;
   if (b) return <Loading />;

@@ -22,14 +22,11 @@ const PostDetail = ({ post, profile, comment }) => {
         <Flex m="1rem" flexDirection="column" gap="1rem" w="100%">
           <Flex w="100%" alignItems="center">
             <Heading>{post.title}</Heading>
-            {post.user_id === profile?.user_id ? <Spacer /> : null}
-            {post.user_id === profile?.user_id ? (
+            {post.user_id === profile?.id ? <Spacer /> : null}
+            {post.user_id === profile?.id ? (
               <Flex gap="0.5rem">
                 <EditPostButton edit={handleEditButton} />
-                <DeletePostButton
-                  PostID={post.post_id}
-                  UserID={profile?.user_id}
-                />
+                <DeletePostButton PostID={post.id} UserID={profile?.id} />
               </Flex>
             ) : null}
           </Flex>
@@ -45,7 +42,7 @@ const PostDetail = ({ post, profile, comment }) => {
             </Text>
             <Spacer />
             <Text textColor="GrayText" paddingRight="0.5rem">
-              #{post.post_id}
+              #{post.id}
             </Text>
             <Text textColor="GrayText" paddingRight="0.5rem">
               |
@@ -75,7 +72,7 @@ const PostDetail = ({ post, profile, comment }) => {
                 content: Yup.string().required("Post required!"),
               })}
               onSubmit={(values, actions) => {
-                const vals = { ...values, post_id: post.post_id };
+                const vals = { ...values, post_id: post.id };
                 actions.resetForm();
                 editPost(vals);
                 setEditing(false);
