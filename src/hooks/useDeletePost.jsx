@@ -4,10 +4,13 @@ const useDeletePost = ({ pid, uid }) => {
   const queryClient = useQueryClient();
   return useMutation(
     () => {
-      fetch(`http://localhost:4000/post/delete?pid=${pid}&uid=${uid}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+      fetch(
+        `${import.meta.env.VITE_BE_URL}/post/delete?pid=${pid}&uid=${uid}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
     },
     {
       onSuccess: () => {

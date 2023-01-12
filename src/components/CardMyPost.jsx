@@ -43,14 +43,22 @@ const CardMyPost = ({ post }) => {
             cursor="pointer"
           >
             <Link
-              to={`/post/${post.post_id}`}
-              onClick={() => view({ sum: 1, post_id: post.post_id })}
+              to={`/post/${post.id}`}
+              onClick={() => view({ sum: 1, post_id: post.id })}
             >
               <Heading m="1rem">{post.title}</Heading>
               <Text ml="1rem" mr="1rem">
                 {post.content.slice(0, 800)}...
               </Text>
               <Flex m="1rem" alignItems="center">
+                <Text textColor="GrayText">#{post.public_id}</Text>
+                <Text
+                  textColor="GrayText"
+                  paddingRight="0.5rem"
+                  paddingLeft="0.5rem"
+                >
+                  |
+                </Text>
                 <FontAwesomeIcon icon={faEye} size="sm" />
                 <Text textColor="GrayText" paddingLeft="0.25rem">
                   {post.view}

@@ -5,7 +5,7 @@ const useGetComments = (props) => {
     ["comment", props],
     async (key, pageParam = 0, id = props) => {
       const res = await fetch(
-        `http://localhost:4000/comment?cursor=${pageParam}&id=${id}`,
+        `${import.meta.env.VITE_BE_URL}/comment?cursor=${pageParam}&id=${id}`,
         {
           credentials: "include",
         }

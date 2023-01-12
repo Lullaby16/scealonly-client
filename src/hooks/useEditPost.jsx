@@ -4,7 +4,7 @@ const useEditPost = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (content) => {
-      fetch("http://localhost:4000/post", {
+      fetch(`${import.meta.env.VITE_BE_URL}/post`, {
         body: JSON.stringify(content),
         method: "PATCH",
         credentials: "include",

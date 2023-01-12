@@ -14,6 +14,7 @@ const Post = () => {
   const { data: post, isLoading: a, error } = useGetPostDetail({ id: id });
   const { data: profile } = useGetProfile();
   const { data: comment, isLoading: b } = useGetTotalComments(id);
+  //console.log(post.id);
 
   if (a) return <Loading />;
   if (b) return <Loading />;

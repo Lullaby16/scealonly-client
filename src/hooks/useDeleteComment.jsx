@@ -4,7 +4,7 @@ const useDeleteComment = ({ cid, uid }) => {
   const queryClient = useQueryClient();
   return useMutation(
     () => {
-      fetch(`http://localhost:4000/comment?cid=${cid}&uid=${uid}`, {
+      fetch(`${import.meta.env.VITE_BE_URL}/comment?cid=${cid}&uid=${uid}`, {
         method: "DELETE",
         credentials: "include",
       });

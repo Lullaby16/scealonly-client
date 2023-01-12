@@ -4,7 +4,7 @@ const useEditComment = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (content) => {
-      fetch("http://localhost:4000/comment", {
+      fetch(`${import.meta.env.VITE_BE_URL}/comment`, {
         body: JSON.stringify(content),
         method: "PATCH",
         credentials: "include",

@@ -42,7 +42,7 @@ const PostDetail = ({ post, profile, comment }) => {
             </Text>
             <Spacer />
             <Text textColor="GrayText" paddingRight="0.5rem">
-              #{post.id}
+              #{post.public_id}
             </Text>
             <Text textColor="GrayText" paddingRight="0.5rem">
               |

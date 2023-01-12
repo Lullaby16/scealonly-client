@@ -5,7 +5,7 @@ const useMyPosts = () => {
     "my_post",
     async ({ pageParam = 0 }) => {
       const res = await fetch(
-        `http://localhost:4000/post/my_post?cursor=${pageParam}`,
+        `${import.meta.env.VITE_BE_URL}/post/my_post?cursor=${pageParam}`,
         {
           credentials: "include",
         }

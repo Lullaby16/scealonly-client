@@ -41,7 +41,7 @@ const CardProfile = () => {
         </Text>
         <Flex ml="1rem" gap="1rem">
           <Text textColor="Highlight" fontSize="sm">
-            {/* #{data?.id} */}#1
+            #{data?.public_id}
           </Text>
           <Text textColor="Highlight" fontSize="sm">
             Joined {moment(data?.created_at).format("MMM YYYY")}

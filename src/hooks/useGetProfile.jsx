@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 
 const useGetProfile = () => {
   return useQuery("profile", async () => {
-    const res = await fetch("http://localhost:4000/profile", {
+    const res = await fetch(`${import.meta.env.VITE_BE_URL}/profile`, {
       credentials: "include",
     });
     if (!res || !res.ok || res.status >= 400) {

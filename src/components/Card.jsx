@@ -50,7 +50,7 @@ const Card = ({ post }) => {
               <Text m="1rem">{post.content.slice(0, 800)}</Text>
               <Flex m="1rem" alignItems="center">
                 <Text textColor="GrayText" paddingRight="0.5rem">
-                  #{post.id}
+                  #{post.public_id}
                 </Text>
                 <Text textColor="GrayText" paddingRight="0.5rem">
                   |

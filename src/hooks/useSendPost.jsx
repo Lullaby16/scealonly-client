@@ -4,7 +4,7 @@ const useSendPost = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (post) => {
-      fetch("http://localhost:4000/post", {
+      fetch(`${import.meta.env.VITE_BE_URL}/post`, {
         body: JSON.stringify(post),
         method: "POST",
         credentials: "include",
@@ -14,10 +14,10 @@ const useSendPost = () => {
       });
     },
     {
-      onSuccess: () => {
+      onSuccess: async () => {
         //Invalidate an refetch
-        queryClient.refetchQueries("post");
-        queryClient.refetchQueries("my_post");
+        await queryClient.refetchQueries("post", { lazy: true });
+        await queryClient.refetchQueries("my_post");
         //location.reload();
       },
     }

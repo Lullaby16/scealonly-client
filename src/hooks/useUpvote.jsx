@@ -4,7 +4,7 @@ const useUpvote = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (upvote) => {
-      fetch("http://localhost:4000/post/upvote", {
+      fetch(`${import.meta.env.VITE_BE_URL}/post/upvote`, {
         body: JSON.stringify(upvote),
         method: "PUT",
         credentials: "include",

@@ -4,7 +4,7 @@ const useSendComment = () => {
   const queryClient = useQueryClient();
   return useMutation(
     (comment) => {
-      fetch("http://localhost:4000/comment", {
+      fetch(`${import.meta.env.VITE_BE_URL}/comment`, {
         body: JSON.stringify(comment),
         method: "POST",
         credentials: "include",
