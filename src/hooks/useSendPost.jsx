@@ -16,9 +16,7 @@ const useSendPost = () => {
     {
       onSuccess: async () => {
         //Invalidate an refetch
-        await queryClient.refetchQueries("post", { lazy: true });
-        await queryClient.refetchQueries("my_post");
-        //location.reload();
+        await queryClient.invalidateQueries(["post"]);
       },
     }
   );

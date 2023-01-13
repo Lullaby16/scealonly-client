@@ -49,15 +49,17 @@ const Donation = () => {
             />
           </ScaleFade>
 
-          <FontAwesomeIcon icon={faDiscord} size="2x" cursor="pointer" />
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            size="2x"
-            cursor="pointer"
-            onClick={() => window.open("mailto://scealonly@gmail.com")}
-          />
-          <FontAwesomeIcon icon={faInstagram} size="2x" cursor="pointer" />
-          <FontAwesomeIcon icon={faFacebook} size="2x" cursor="pointer" />
+          <FontAwesomeIcon icon={faDiscord} size="2x" color="gray" />
+          <ScaleFade in={onToggle} whileHover={{ color: "#C71610" }}>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              size="2x"
+              cursor="pointer"
+              onClick={() => window.open("mailto://scealonly@gmail.com")}
+            />
+          </ScaleFade>
+          <FontAwesomeIcon icon={faInstagram} size="2x" color="gray" />
+          <FontAwesomeIcon icon={faFacebook} size="2x" color="gray" />
         </Flex>
       </Flex>
       <Flex

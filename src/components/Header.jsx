@@ -16,9 +16,9 @@ const Header = () => {
     >
       <Text paddingLeft="1rem">ScealOnly</Text>
       <Spacer />
-      <Button mr="3rem" variant="link" colorScheme="black" size="md">
+      {/* <Button mr="3rem" variant="link" colorScheme="black" size="md">
         Trending
-      </Button>
+      </Button> */}
       <Button
         mr="3rem"
         variant="link"

@@ -18,7 +18,7 @@ const Content = () => {
       m="1rem"
       boxShadow="5px 5px black"
     >
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Flex
         alignItems="center"
         h="full"

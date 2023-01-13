@@ -3,7 +3,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 import useGetProfile from "../hooks/useGetProfile";
 import moment from "moment";
 import CardMyPost from "./CardMyPost";
-import Loading from "./Loading";
+//import Loading from "./Loading";
 import useMyPost from "../hooks/useMyPosts";
 import useLogout from "../hooks/useLogout";
 import { AccountContext } from "../context/AccountContext";
@@ -22,7 +22,7 @@ const CardProfile = () => {
   const { mutate: logout } = useLogout();
   const post = mypost?.pages[0]?.posts.length;
 
-  if (isLoading) return <Loading />;
+  // if (isLoading) return <Loading />;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
