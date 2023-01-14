@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     //origin: "localhost",
     //port: 3000,
-    origin: "0.0.0.0",
-    port: $PORT,
+    origin: "http://127.0.0.0/",
+    port: 3000,
   },
 });
