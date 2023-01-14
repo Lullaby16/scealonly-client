@@ -25,7 +25,7 @@ const Login = () => {
       })}
       onSubmit={(values, actions) => {
         const vals = { ...values };
-        fetch("http://localhost:4000/auth/login", {
+        fetch(`${import.meta.env.VITE_BE_URL}/auth/login`, {
           method: "POST",
           credentials: "include",
           headers: {
