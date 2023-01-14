@@ -7,7 +7,7 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: null });
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:4000/auth/login", {
+    fetch(`${import.meta.env.VITE_BE_URL}/auth/login`, {
       credentials: "include",
     })
       .catch((err) => {
