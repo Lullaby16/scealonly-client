@@ -15,8 +15,8 @@ const CommentSection = ({ post }) => {
   console.log(data);
   return (
     <Flex
-      w="50%"
-      h="100vh"
+      w={["100%", "100%", "50%", "50%"]}
+      h={["fit-content", "fit-content", "100vh", "100vh"]}
       flexDirection="column"
       overflowY="scroll"
       css={`
@@ -43,7 +43,7 @@ const CommentSection = ({ post }) => {
             });
           }}
         >
-          <VStack as={Form} w="95%" gap="1rem">
+          <VStack as={Form} w={["100%", "100%", "95%", "95%"]} gap="1rem">
             <TextAreaField
               name="comment"
               placeholder="Write your comment here"

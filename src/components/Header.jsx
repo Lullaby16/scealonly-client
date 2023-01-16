@@ -20,7 +20,7 @@ const Header = () => {
         Trending
       </Button> */}
       <Button
-        mr="3rem"
+        mr={["1rem", "1.5rem", "2rem", "3rem"]}
         variant="link"
         colorScheme="black"
         size="md"
@@ -31,7 +31,7 @@ const Header = () => {
         Donate
       </Button>
       <Button
-        mr="3rem"
+        mr={["1rem", "1.5rem", "2rem", "3rem"]}
         variant="link"
         colorScheme="black"
         size="md"

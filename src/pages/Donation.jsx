@@ -13,23 +13,32 @@ import ExitButton from "../components/ExitButton";
 const Donation = () => {
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Flex width="full" height="100vh">
+    <Flex
+      width="full"
+      height="100vh"
+      flexDirection={["column", "column", "column", "row"]}
+    >
       <ExitButton />
       <Flex
         align="center"
         justifyContent="center"
-        width="50%"
+        width={["full", "100%", "100%", "50%"]}
         flexDirection="column"
         gap="1rem"
       >
-        <Flex backgroundColor="#203449" boxShadow="5px 5px black" width="35rem">
+        <Flex
+          backgroundColor="#203449"
+          boxShadow="5px 5px black"
+          width={["22rem", "28rem", "35rem", "35rem"]}
+          mt={["3.5rem", "3.5rem", "3.5rem", "0rem"]}
+        >
           <Text m="1rem" fontSize="xl">
             ScealOnly is a web application that was built by myself and is not
             funded by anyone. All costs from the development process to web
             hosting are borne by me. So I really appreciate all the support to
             develop this web application. If you think this application is
             useful and you want to participate in the development you can donate
-            by scanning the barcode on the side. Thank you for all your support.
+            by scanning this barcode. Thank you for all your support.
           </Text>
         </Flex>
         <Flex
@@ -37,7 +46,7 @@ const Donation = () => {
           boxShadow="5px 5px black"
           justifyContent="space-between"
           alignItems="space-between"
-          width="35rem"
+          width={["22rem", "28rem", "35rem", "35rem"]}
           padding="1rem"
         >
           <ScaleFade in={onToggle} whileHover={{ color: "#1DA1F2" }}>
@@ -65,9 +74,10 @@ const Donation = () => {
       <Flex
         align="center"
         justifyContent="center"
-        width="50%"
+        width={["100%", "100%", "100%", "50%"]}
         flexDirection="column"
         gap="1rem"
+        mt={["1rem", "1rem", "1rem", "0rem"]}
       >
         <Text fontSize="2xl">Scan here</Text>
         <Flex

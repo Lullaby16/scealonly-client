@@ -18,7 +18,12 @@ const PostDetail = ({ post, profile, comment }) => {
   };
   const card = useMemo(
     () => (
-      <Flex w="50%" h="100vh" borderRightWidth="2px">
+      <Flex
+        w={["100%", "100%", "50%", "50%"]}
+        h={["fit-content", "fit-content", "100vh", "100vh"]}
+        borderRightWidth={["0px", "0px", "2px", "2px"]}
+        mt={["2.5rem", "2.5rem", "0rem", "0rem"]}
+      >
         <Flex m="1rem" flexDirection="column" gap="1rem" w="100%">
           <Flex w="100%" alignItems="center">
             <Heading>{post.title}</Heading>

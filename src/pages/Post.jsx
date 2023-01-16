@@ -21,7 +21,11 @@ const Post = () => {
   if (error) return <Text>Error: {error.message}</Text>;
 
   return (
-    <Flex w="100%" h="100vh" flexDirection="row">
+    <Flex
+      w="100%"
+      h={["fit-content", "fit-content", "100vh", "100vh"]}
+      flexDirection={["column", "column", "row", "row"]}
+    >
       <ExitButton />
       <PostDetail post={post} profile={profile} comment={comment} />
       <CommentSection post={post} />

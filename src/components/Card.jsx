@@ -34,8 +34,8 @@ const Card = ({ post }) => {
           <Flex
             borderWidth="2px"
             borderColor="black"
-            width="52rem"
-            maxHeight="30rem"
+            width={["20rem", "30rem", "43rem", "52rem"]}
+            maxHeight={["45rem", "30rem", "30rem", "30rem"]}
             backgroundColor="#203449"
             flexDirection="column"
             boxShadow="5px 5px black"
@@ -48,36 +48,40 @@ const Card = ({ post }) => {
             >
               <Heading m="1rem">{post.title}</Heading>
               <Text m="1rem">{post.content.slice(0, 800)}</Text>
-              <Flex m="1rem" alignItems="center">
-                <Text textColor="GrayText" paddingRight="0.5rem">
-                  #{post.public_id}
-                </Text>
-                <Text textColor="GrayText" paddingRight="0.5rem">
-                  |
-                </Text>
-                <FontAwesomeIcon icon={faEye} size="sm" />
-                <Text textColor="GrayText" paddingLeft="0.25rem">
-                  {post.view}
-                </Text>
-                <Text
-                  textColor="GrayText"
-                  paddingRight="0.5rem"
-                  paddingLeft="0.5rem"
-                >
-                  |
-                </Text>
-                <FontAwesomeIcon icon={faMessage} size="sm" />
-                <Text textColor="GrayText" paddingLeft="0.25rem">
-                  {comment.length}
-                </Text>
+              <Flex m="1rem" flexDirection={["column", "row", "row", "row"]}>
+                <Flex alignItems="center">
+                  <Text textColor="GrayText" paddingRight="0.5rem">
+                    #{post.public_id}
+                  </Text>
+                  <Text textColor="GrayText" paddingRight="0.5rem">
+                    |
+                  </Text>
+                  <FontAwesomeIcon icon={faEye} size="sm" />
+                  <Text textColor="GrayText" paddingLeft="0.25rem">
+                    {post.view}
+                  </Text>
+                  <Text
+                    textColor="GrayText"
+                    paddingRight="0.5rem"
+                    paddingLeft="0.5rem"
+                  >
+                    |
+                  </Text>
+                  <FontAwesomeIcon icon={faMessage} size="sm" />
+                  <Text textColor="GrayText" paddingLeft="0.25rem">
+                    {comment.length}
+                  </Text>
+                </Flex>
                 <Spacer />
-                <Text>{moment(post.created_at).fromNow()}</Text>
-                <Text textColor="GrayText" paddingLeft="0.5rem">
-                  |
-                </Text>
-                <Text as="u" paddingLeft="0.5rem">
-                  {post.username}
-                </Text>
+                <Flex>
+                  <Text>{moment(post.created_at).fromNow()}</Text>
+                  <Text textColor="GrayText" paddingLeft="0.5rem">
+                    |
+                  </Text>
+                  <Text as="u" paddingLeft="0.5rem">
+                    {post.username}
+                  </Text>
+                </Flex>
               </Flex>
             </Link>
           </Flex>
