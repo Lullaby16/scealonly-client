@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 
 const useGetPostDetail = ({ id }) => {
-  console.log(id);
   return useQuery(["detail", id], async () => {
     const res = await fetch(
       `${import.meta.env.VITE_BE_URL}/post/detail?id=${id}`,

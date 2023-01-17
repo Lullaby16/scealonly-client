@@ -39,7 +39,7 @@ const PostButton = () => {
         isCentered
         isOpen={isOpen}
         onClose={onClose}
-        size="xl"
+        size={["sm", "xl", "xl", "xl"]}
         closeOnOverlayClick={false}
       >
         <ModalOverlay

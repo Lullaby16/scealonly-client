@@ -12,7 +12,7 @@ const CommentSection = ({ post }) => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useGetComments(post.id);
   const toast = useToast();
-  console.log(data);
+
   return (
     <Flex
       w={["100%", "100%", "50%", "50%"]}

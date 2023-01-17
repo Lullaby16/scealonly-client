@@ -32,7 +32,7 @@ const Donation = () => {
           width={["22rem", "28rem", "35rem", "35rem"]}
           mt={["3.5rem", "3.5rem", "3.5rem", "0rem"]}
         >
-          <Text m="1rem" fontSize="xl">
+          <Text m="1rem" fontSize={["md", "lg", "xl", "xl"]}>
             ScealOnly is a web application that was built by myself and is not
             funded by anyone. All costs from the development process to web
             hosting are borne by me. So I really appreciate all the support to
@@ -79,7 +79,7 @@ const Donation = () => {
         gap="1rem"
         mt={["1rem", "1rem", "1rem", "0rem"]}
       >
-        <Text fontSize="2xl">Scan here</Text>
+        <Text fontSize={["md", "lg", "xl", "2xl"]}>Scan here</Text>
         <Flex
           height="18rem"
           width="18rem"
