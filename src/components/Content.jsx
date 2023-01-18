@@ -34,7 +34,7 @@ const Content = () => {
         `}
       >
         {data?.pages?.map((page) =>
-          page.posts.map((post) => <Card post={post} />)
+          page.posts.map((post) => <Card post={post} key={post.id} />)
         )}
         {hasNextPage && !isFetchingNextPage && (
           <Button onClick={() => fetchNextPage()}>View More</Button>

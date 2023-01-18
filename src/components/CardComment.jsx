@@ -25,7 +25,6 @@ const CardComment = ({ comment }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { data: profile } = useGetProfile();
   const { mutate: editComment } = useEditComment();
-  //console.log({ user: profile.id, comment: comment.user_id });
 
   const card = useMemo(
     () => (

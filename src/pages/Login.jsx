@@ -34,13 +34,11 @@ const Login = () => {
           body: JSON.stringify(vals),
         })
           .catch((err) => {
-            console.log(err);
-            return;
+            return setError(err);
           })
           .then((res) => {
             if (!res || !res.ok || res.status >= 400) {
-              console.log("tidak ok");
-              return;
+              return setError(res.status);
             }
             return res.json();
           })
@@ -53,7 +51,6 @@ const Login = () => {
               navigate("/");
             }
           });
-        //actions.resetForm();
       }}
     >
       <VStack

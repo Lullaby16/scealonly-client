@@ -39,7 +39,6 @@ const Card = ({ post }) => {
             backgroundColor="#203449"
             flexDirection="column"
             boxShadow="5px 5px black"
-            key={post.post_id}
             cursor="pointer"
           >
             <Link

@@ -33,7 +33,6 @@ const CommentSection = ({ post }) => {
           })}
           onSubmit={(values, actions) => {
             const vals = { ...values, post_id: post.id };
-            console.log(vals);
             actions.resetForm();
             sendComment(vals);
             toast({
@@ -59,7 +58,9 @@ const CommentSection = ({ post }) => {
         </Formik>
       </Flex>
       {data?.pages?.map((page) =>
-        page.posts.map((comment) => <CardComment comment={comment} />)
+        page.posts.map((comment) => (
+          <CardComment comment={comment} key={comment.id} />
+        ))
       )}
       {hasNextPage && !isFetchingNextPage && (
         <Button
