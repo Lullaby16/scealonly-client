@@ -10,7 +10,8 @@ import {
   AlertDialogCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import useDeletePost from "../hooks/useDeletePost";
 
@@ -22,7 +23,7 @@ const DeletePostButton = ({ PostID, UserID }) => {
   return (
     <>
       <Button onClick={onOpen} variant="outline">
-        <DeleteIcon />
+        <FontAwesomeIcon icon={faTrash} size="sm" />
       </Button>
       <AlertDialog
         motionPreset="slideInBottom"
